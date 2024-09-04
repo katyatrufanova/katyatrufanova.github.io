@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katya Trufanova - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --accent-color: #3498db;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        section {
+            padding: 2rem 0;
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        #intro {
+            background: var(--secondary-color);
+            text-align: center;
+            padding-top: 0rem;
+        }
+        #intro img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        #about {
+            background: #ffffff;
+        }
+        #projects {
+            background: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .split-section {
+            display: flex;
+            align-items: stretch;
+            min-height: auto;
+            margin-bottom: 1rem;
+        }
+        .left-column {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2rem;
+            padding-top: 0.5rem;
+            background-color: var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        .profile-info h1 {
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem;
+            font-size: 1.7rem;
+        }
+
+        .profile-info p {
+            margin: 0.2rem 0; 
+            line-height: 0.8; 
+            font-size: 0.9rem; 
+        }
+
+        .education-info p {
+            margin: 0.2rem 0; 
+            line-height: 1.4; 
+            font-size: 0.9rem; 
+        }
+        .right-column {
+            flex: 2;
+            padding: 2rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            align-content: center;
+            overflow-y: auto;
+        }
+        .profile-info {
+            text-align: center;
+        }
+        .profile-info img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-top: 1rem;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .project-header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .project-title {
+            margin: 0;
+        }
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .project-description {
+            color: var(--text-color);
+        }
+        .project-link:hover {
+            background-color: var(--primary-color);
+        }
+        #intro-about {
+            padding-top: 0;
+            padding-bottom: 0; 
+        }
+        #projects {
+            padding-top: 0.3rem;
+        }
+        .education-info {
+            margin-top: 1rem; 
+            text-align: center; 
+            font-size: 0.9rem; 
+            color: var(--text-color); 
+        }
+        .education-info p {
+            margin-bottom: 0.5rem;
+        }
+        .social-links {
+            margin-top: 0.3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!--
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    -->
+
+    <main>
+        <section id="intro-about" class="split-section">
+            <div class="left-column">
+                <div class="profile-info">
+                    <img src="images/photo.png" alt="Katya Trufanova">
+                    <h1>Katya Trufanova</h1>
+                    <p>AI Engineer | Software Developer | Lifelong Learner</p>
+            
+                    <!-- Education Information -->
+                    <div class="education-info">
+                        <p><strong>Computer Science Master Degree</strong><br>
+                        Artificial Intelligence curriculum, Cum laude</p>
+            
+                        <p><strong>Computer Science and Technologies for Software Production Degree</strong><br>
+                        Cum laude</p>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/katya-trufanova-a7a684303/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/katyatrufanova" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:katya.trufanova92@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <!-- <h2>About Me</h2> -->
+                <p>I'm a passionate and versatile AI Engineer and Software Developer with a strong academic background in Computer Science and Artificial Intelligence. Having completed my Master's degree in Computer Science with a focus on AI, I bring a wealth of knowledge and hands-on experience in cutting-edge technologies and methodologies.</p>
+                
+                <p>My expertise spans a wide range of areas within AI and software development, including Machine Learning and Deep Learning, Computer Vision and Natural Language Processing, MLOps and Big Data Analytics, Software Development and Testing, Web and Mobile Application Development, Database Management and Cloud Technologies.</p>
+                What sets me apart is my ability to bridge the gap between theoretical concepts and practical applications. I've published <a href="https://dl.acm.org/doi/10.1145/3605390.3605399">research</a>  on analyzing stress responses related to UI usability, demonstrating my commitment to enhancing user experiences through innovative technologies. Additionally, I am currently working on publishing research about my <a href="https://dl.acm.org/doi/10.1145/3605390.3605399">master's thesis</a>, which focuses on explainable Alzheimer's disease detection from MRI scans.
+                  <p>I'm passionate about leveraging AI to create impactful solutions and am eager to contribute to innovative projects in the field. Let's connect and explore how we can push the boundaries of technology together!</p>
+                  <p>Let's connect and explore how we can push the boundaries of technology together!</p>
+                
+            </div>
+        </section>
+    </main>
+
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                <div class="project-card">
+                    <a href="https://github.com/se4ai2324-uniba/CropSegmentation" class="project-header">
+                        <img src="images/crop.png" alt="Crop Segmentation">
+                        <h3 class="project-title">Crop Segmentation</h3>
+                    </a>
+                    <p>An advanced system for segmenting crops from UAV-captured images using Deep Neural Networks (U-NET) and K-means clustering. This project showcases perfect implementation of MLOps practices, bridging the gap between ML and deployment.</p>
+                    <ul>
+                        <li>Implements U-NET for semantic segmentation</li>
+                        <li>Utilizes K-means for RGB color image segmentation</li>
+                        <li>Includes API, frontend, testing, deployment, and monitoring</li>
+                        <li>Collaborative project demonstrating teamwork skills</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/amazon-reviews-sentiment-analysis" class="project-header">
+                        <img src="images/reviews.png" alt="Amazon Reviews Sentiment Analysis">
+                        <h3 class="project-title">Amazon Reviews Sentiment Analysis</h3>
+                    </a>
+                    <p>A comprehensive exploration of cutting-edge ML models for sentiment analysis on Amazon product reviews, showcasing various techniques and models.</p>
+                    <ul>
+                        <li>Implements Naive Bayes, Logistic Regression, SVM, biLSTM, and DistilBERT</li>
+                        <li>Utilizes advanced techniques like LIME, SMOTE, and ensemble learning</li>
+                        <li>Includes interactive web interface for real-time predictions</li>
+                        <li>Demonstrates proficiency in NLP and deep learning</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/usability-stress-response-analysis" class="project-header">
+                        <img src="images/user.png" alt="Analyzing Stress Responses">
+                        <h3 class="project-title">Analyzing Stress Responses in UI Usability</h3>
+                    </a>
+                    <p class="project-description">A published research project investigating the relationship between UI design, usability, and physiological stress responses, combining HCI and psychophysiology.</p>
+                    <ul>
+                        <li>Published in a peer-reviewed paper</li>
+                        <li>Developed custom interfaces using HTML, CSS, and JavaScript</li>
+                        <li>Utilized MATLAB for regression and classification</li>
+                        <li>Implemented user testing with physiological sensors</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="#" class="project-header">
+                        <img src="images/mri.png" alt="Alzheimer's Disease Detection">
+                        <h3 class="project-title">Alzheimer's Disease Detection with Explainability</h3>
+                    </a>
+                    <p class="project-description">An AI-powered framework for detecting Alzheimer's Disease from MRI images, incorporating explainable AI techniques for interpretable results.</p>
+                    <ul>
+                        <li>Multi-modal approach combining medical images and demographic data</li>
+                        <li>Utilizes Grad-CAM for generating heatmap masks</li>
+                        <li>Implements large language models for generating medical reports</li>
+                        <li>Aims to support experts in neuroscience and medicine</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/tweet-misogyny-detection" class="project-header">
+                        <img src="images/tweet.png" alt="Tweet Misogyny Detection">
+                        <h3 class="project-title">Tweet Misogyny Detection</h3>
+                    </a>
+                    <p class="project-description">A project comparing state-of-the-art language models for detecting misogynistic content in tweets, focusing on Italian language processing.</p>
+                    <ul>
+                        <li>Evaluates AlBERTo, UmBERTo, and XLM-T models</li>
+                        <li>Performs both binary and ternary classification tasks</li>
+                        <li>Explores the impact of data augmentation</li>
+                        <li>Demonstrates NLP skills in social media content analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/olive-tree-pruning-detection" class="project-header">
+                        <img src="images/tree.png" alt="Olive Tree Pruning Detection">
+                        <h3 class="project-title">Olive Tree Pruning Detection</h3>
+                    </a>
+                    <p class="project-description">An object detection system using YOLOv7-tiny to identify pruned and unpruned olive trees in drone-captured images, aiding in agricultural management.</p>
+                    <ul>
+                        <li>Utilizes YOLOv7-tiny for efficient object detection</li>
+                        <li>Processes high-resolution TIF images of olive tree fields</li>
+                        <li>Conducted experiments to optimize hyperparameters</li>
+                        <li>Demonstrates skills in computer vision and agricultural tech</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/crypto-market-classifier" class="project-header">
+                        <img src="images/crypto.png" alt="Crypto Market Classifier">
+                        <h3 class="project-title">Crypto Market Classifier</h3>
+                    </a>
+                    <p class="project-description">A collaborative project exploring cryptocurrency price trends using Multi-View Time Series Classification (MVTSC) and a Bagging Classifier model.</p>
+                    <ul>
+                        <li>Implements MVTSC for analyzing different data view combinations</li>
+                        <li>Uses a Bagging Classifier for enhanced accuracy and robustness</li>
+                        <li>Focuses on improving predictive accuracy in crypto market analysis</li>
+                        <li>Demonstrates skills in financial data mining and ML</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/software-developer-sentiment-analysis" class="project-header">
+                        <img src="images/developer.png" alt="Software Developer Sentiment Analysis">
+                        <h3 class="project-title">Software Developer Sentiment Analysis</h3>
+                    </a>
+                    <p class="project-description">A project implementing sentiment analysis classifiers trained on software developers' communication channels, using state-of-the-art NLP models.</p>
+                    <ul>
+                        <li>Implements DistilBERT and bidirectional LSTM models</li>
+                        <li>Utilizes the Senti4SD dataset from Stack Overflow</li>
+                        <li>Compares performance of different models and embeddings</li>
+                        <li>Demonstrates NLP skills in the context of software engineering</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/emoevent-bert-analysis" class="project-header">
+                        <img src="images/emotions.png" alt="EmoEvent BERT Analysis">
+                        <h3 class="project-title">EmoEvent BERT Analysis</h3>
+                    </a>
+                    <p class="project-description">An extension of the EmoEvent corpus research, implementing BERT for emotion detection in multilingual social media data.</p>
+                    <ul>
+                        <li>Builds upon published research in multilingual emotion detection</li>
+                        <li>Implements BERT for advanced emotion classification in tweets</li>
+                        <li>Addresses key suggestions for future work from original authors</li>
+                        <li>Demonstrates skills in NLP and emotion AI</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/construction-oracle-database" class="project-header">
+                        <img src="images/construction.png" alt="Construction Project Management System">
+                        <h3 class="project-title">Construction Project Management System</h3>
+                    </a>
+                    <p class="project-description">A comprehensive database solution for managing construction projects, showcasing skills in database design and implementation.</p>
+                    <ul>
+                        <li>Includes detailed requirements analysis and system design</li>
+                        <li>Implements custom types, tables, triggers, and procedures</li>
+                        <li>Features query optimization for efficient data retrieval</li>
+                        <li>Includes a web application interface for user interaction</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/digit-recognition-mnist" class="project-header">
+                        <img src="images/digits.png" alt="Digit Recognition with MNIST">
+                        <h3 class="project-title">Digit Recognition with MNIST Dataset</h3>
+                    </a>
+                    <p class="project-description">An implementation of a digit recognition system using the MNIST dataset, focusing on dimensionality reduction and classification techniques.</p>
+                    <ul>
+                        <li>Utilizes Singular Value Decomposition (SVD) for feature extraction</li>
+                        <li>Implements various techniques for optimal component selection</li>
+                        <li>Uses nearest neighbor approach for classification</li>
+                        <li>Includes comprehensive evaluation metrics</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/tic-tac-toe-ai-prolog" class="project-header">
+                        <img src="images/tic-tac-toe.png" alt="Tic-Tac-Toe AI in Prolog">
+                        <h3 class="project-title">Tic-Tac-Toe AI in Prolog</h3>
+                    </a>
+                    <p class="project-description">A sophisticated implementation of Tic-Tac-Toe in Prolog, showcasing advanced AI techniques and logical programming skills.</p>
+                    <ul>
+                        <li>Implements Min-Max algorithm with Alpha-Beta pruning</li>
+                        <li>Features modular design for improved maintainability</li>
+                        <li>Provides an extensible framework for two-player board games</li>
+                        <li>Includes an interactive user interface for gameplay</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/numerical-methods-python" class="project-header">
+                        <img src="images/numerical.png" alt="Numerical Methods in Python">
+                        <h3 class="project-title">Numerical Methods in Python</h3>
+                    </a>
+                    <p class="project-description">A comprehensive collection of numerical methods implemented in Python, designed for solving complex mathematical problems efficiently.</p>
+                    <ul>
+                        <li>Covers various algorithms in linear algebra, interpolation, and root-finding</li>
+                        <li>Includes numerical integration and iterative methods</li>
+                        <li>Features condition number analysis and performance comparisons</li>
+                        <li>Provides visualizations for understanding method behaviors</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://github.com/katyatrufanova/bivariate-function-minimum-finder" class="project-header">
+                        <img src="images/minimum.png" alt="Bivariate Function Minimum Finder">
+                        <h3 class="project-title">Bivariate Function Minimum Finder</h3>
+                    </a>
+                    <p class="project-description">An implementation and comparison of Steepest Descent and Newton's methods for finding the minimum of a specific bivariate function.</p>
+                    <ul>
+                        <li>Implements both Steepest Descent and Newton's optimization methods</li>
+                        <li>Compares methods in terms of convergence speed and accuracy</li>
+                        <li>Includes visualization of the objective function and results</li>
+                        <li>Analyzes convergence order for both methods</li>
+                    </ul>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Katya Trufanova. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
