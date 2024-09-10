@@ -1,4 +1,4 @@
-Welcome to my [portfolio](katyatrufanova.github.io)! This website showcases my skills, projects, and experience as an AI Engineer and Software Developer.
+Welcome to my [portfolio](https://katyatrufanova.github.io/)! This website showcases my skills, projects, and experience as an AI Engineer and Software Developer.
 
 ## About Me
 
